@@ -1,0 +1,26 @@
+
+body{
+    margin-top: 25vh;
+    margin-bottom: 15vh;
+    text-align: center;
+    background-image: url(../imgs/1.png);
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    background-size: 100%;
+}
+.div_head{
+    font-size: 25px;
+    margin-top: 1%;
+}
+.form_text{
+    margin-top:3%;
+}
+.score{
+    letter-spacing: 5px;
+}
+.ability{
+    margin-right: 10vw;
+p{
+text-align: left;
+}
+}

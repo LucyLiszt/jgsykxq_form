@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+        <title>浙大勤创商业狂想曲报名表</title>
+    </head>
+    <!-- <script src="https://cdn.bootcss.com/vue/2.5.18-beta.0/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="./js/index.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <body onload="hideall()">
+            <div class="row">
+        <!-- <script>  $("individual4").hide();</script> -->
+
+
+                <div class="title-11">
+                    <h1>浙大勤创"商业狂想曲"</h1>
+                </div>
+
+</br>
+
+    	<form @submit.prevent="submit">
+            <div class="form-group row">
+                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                <div class="col-xs-10 col-sm-8 col-md-4">
+    		      <p>请决定你的参赛形式</p>
+                  <div id="choose">
+                    <input type="radio" name="picked" value="One" id="One" onchange="showothers1()" style="text-align: left;">个人
+                    <br>
+                    <input type="radio" name="picked" value="Two" id="Two" onchange="showothers2()" style="text-align: left;">团队
+                </div>
+                </div>
+                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+
+            </div>
+            <!-- <template onchange="show()">
+  			<el-radio v-model="radio" label="individual" >个人</el-radio>
+  			<el-radio v-model="radio" label="team">团队</el-radio>
+			</template> -->
+
+
+            <div class="form-group row">
+                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                <div id="choose">
+                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <p>请选择团队总人数</p>
+
+                    <select class="form-control renshu" name="renshu" id="renshu" onchange="indivi()">
+                        <option value ="0">请选择</option>
+                        <option value ="2">2</option>
+                        <option value ="3">3</option>
+                        <option value ="4">4</option>
+                        <option value ="5">5</option>
+                        <option value ="6">6</option>
+                    </select>
+                </div>
+  					<!-- <span>Picked: {{ picked }}</span> -->
+				</div>
+                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+            </div>
+</br>
+			<!-- <input name="renshu1" value="renshu" placeholder="请输入团队人数" onchange="indivi()" > -->
+
+            <div id="main">
+                <div class="individual1 form-group row">
+                    <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <p>成员</p>
+                <p>姓名<input type="text" name="name1" class="form-name form-control" v-model="user.name"></p>
+                <p>学号<input type="text" name="studentID1" class="form-studentID form-control" v-model="user.studentID"></p>
+                <p>性别<input type="text" name="gender1" class="form-gender form-control" v-model="user.gender"></p>
+                <p>电话<input type="text" name="phone1" class="form-phone form-control" v-model="user.phone"></p>
+                <p>班级<input type="text" name="class1" class="form-class form-control" v-model="user.class"></p>
+                <p>学园<input type="text" name="major1" class="form-major form-control" v-model="user.major"></p>
+                </div>
+                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                </div>
+
+                <div class="individual2 form-group row">
+                    <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <p>成员2</p>
+                <p>姓名<input type="text" name="name2" class="form-name form-control" v-model="user.name"></p>
+                <p>学号<input type="text" name="studentID2" class="form-studentID form-control" v-model="user.studentID"></p>
+                <p>性别<input type="text" name="gender2" class="form-gender form-control" v-model="user.gender"></p>
+                <p>电话<input type="text" name="phone2" class="form-phone form-control" v-model="user.phone"></p>
+                <p>班级<input type="text" name="class2" class="form-class form-control" v-model="user.class"></p>
+                <p>学园<input type="text" name="major2" class="form-major form-control" v-model="user.major"></p>
+                </div>
+                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                </div>
+
+                <div class="individual3 form-group row">
+                    <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <p>成员3</p>
+                <p>姓名<input type="text" name="name3" class="form-name form-control" v-model="user.name"></p>
+                <p>学号<input type="text" name="studentID3" class="form-studentID form-control" v-model="user.studentID"></p>
+                <p>性别<input type="text" name="gender3" class="form-gender form-control" v-model="user.gender"></p>
+                <p>电话<input type="text" name="phone3" class="form-phone form-control" v-model="user.phone"></p>
+                <p>班级<input type="text" name="class3" class="form-class form-control" v-model="user.class"></p>
+                <p>学园<input type="text" name="major3" class="form-major form-control" v-model="user.major"></p>
+                </div>
+                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                </div>
+
+                <div class="individual4 form-group row">
+                    <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <p>成员4</p>
+                <p>姓名<input type="text" name="name4" class="form-name form-control" v-model="user.name"></p>
+                <p>学号<input type="text" name="studentID4" class="form-studentID form-control" v-model="user.studentID"></p>
+                <p>性别<input type="text" name="gender4" class="form-gender form-control" v-model="user.gender"></p>
+                <p>电话<input type="text" name="phone4" class="form-phone form-control" v-model="user.phone"></p>
+                <p>班级<input type="text" name="class4" class="form-class form-control" v-model="user.class"></p>
+                <p>学园<input type="text" name="major4" class="form-major form-control" v-model="user.major"></p>
+                </div>
+                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                </div>
+
+                <div class="individual5 form-group row">
+                    <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <p>成员5</p>
+                <p>姓名<input type="text" name="name5" class="form-name form-control" v-model="user.name"></p>
+                <p>学号<input type="text" name="studentID5" class="form-studentID form-control" v-model="user.studentID"></p>
+                <p>性别<input type="text" name="gender5" class="form-gender form-control" v-model="user.gender"></p>
+                <p>电话<input type="text" name="phone5" class="form-phone form-control" v-model="user.phone"></p>
+                <p>班级<input type="text" name="class5" class="form-class form-control" v-model="user.class"></p>
+                <p>学园<input type="text" name="major5" class="form-major form-control" v-model="user.major"></p>
+                </div>
+                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                </div>
+
+                <div class="individual6 form-group row">
+                    <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <p>成员6</p>
+                <p>姓名<input type="text" name="name6" class="form-name form-control" v-model="user.name"></p>
+                <p>学号<input type="text" name="studentID6" class="form-studentID form-control" v-model="user.studentID"></p>
+                <p>性别<input type="text" name="gender6" class="form-gender form-control" v-model="user.gender"></p>
+                <p>电话<input type="text" name="phone6" class="form-phone form-control" v-model="user.phone"></p>
+                <p>班级<input type="text" name="class6" class="form-class form-control" v-model="user.class"></p>
+                <p>学园<input type="text" name="major6" class="form-major form-control" v-model="user.major"></p>
+                </div>
+                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                </div>
+
+                        <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                       <div class="col-xs-10 col-sm-8 col-md-4">
+                        <div class="timu" name="timu">
+                            <p>请简要谈谈你/你们对本次活动的理解以及参加本次活动的原因</p>
+                            <textarea class="form-control" rows="5" cols="30" v-model="user.words"></textarea>
+                        </div>
+                    </br>
+                         <button type="submit" class="btn btn-default">提交</button>
+                        </div>
+                        <div class="col-xs-1 col-sm-2 col-md-4"></div>
+
+
+                        <!-- <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                        <div class="col-xs-10 col-sm-8 col-md-4">
+                        <div class="submitbtn btn btn-default">
+                            <input type="submit" value="提交">
+                        </div>
+                        <button type="submit" class="btn btn-default">提交</button>
+                        </div>
+                        <div class="col-xs-1 col-sm-2 col-md-4"></div> -->
+
+        </form>
+        </div>
+    </body>
+
+        <style type="text/css">
+        p{
+            text-align: left;
+        }
+    </style>
+
+        <script>
+
+// new Vue({
+//   el: '#example-4',
+//   data: {
+//     picked: ''
+//   }
+// })
+        // showothers();
+
+            export default {
+                name: 'window',
+                data () {
+                    return {
+                        user: {
+                            radio:'',
+                            renshu:'',
+                            name1: '',
+                            studentID1: '',
+                            gender1: '',
+                            phone1: '',
+                            class1: '',
+                            major1: '',//major means "学园"
+                            name2: '',
+                            studentID2: '',
+                            gender2: '',
+                            phone2: '',
+                            class2: '',
+                            major2: '',
+                            name3: '',
+                            studentID3: '',
+                            gender3: '',
+                            phone3: '',
+                            class3: '',
+                            major3: '',
+                            name4: '',
+                            studentID4: '',
+                            gender4: '',
+                            phone4: '',
+                            class4: '',
+                            major4: '',
+                            name5: '',
+                            studentID5: '',
+                            gender5: '',
+                            phone5: '',
+                            class5: '',
+                            major5: '',
+                            name6: '',
+                            studentID6: '',
+                            gender6: '',
+                            phone6: '',
+                            class6: '',
+                            major6: '',
+                            timu:'',
+
+                        }
+                    }
+                },
+                methods:{
+                    submit: function() {
+                        var formData = JSON.stringify(this.user);
+                        this.$http.post('/admin/', formData).then((response) => {
+                            // success callback
+                        }, (response) => {
+                            // error callback
+                        });
+                    }
+                }
+            }
+        </script>
+
+</html>
