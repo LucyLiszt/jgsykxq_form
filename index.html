@@ -19,14 +19,14 @@
 
 
                 <div class="title-11">
-                    <h1>浙大勤创"商业狂想曲"</h1>
+                    <h3>浙大勤创"商业狂想曲"</h3>
                 </div>
 
 </br>
 
-    	<form @submit.prevent="submit">
+    	<form @submit.prevent="submit" action="http://localhost:4000/post" method="POST">
             <div class="form-group row">
-                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                <div class="col-xs-2 col-sm-2 col-md-4"></div>
                 <div class="col-xs-10 col-sm-8 col-md-4">
     		      <p>请决定你的参赛形式</p>
                   <div id="choose">
@@ -35,7 +35,7 @@
                     <input type="radio" name="picked" value="Two" id="Two" onchange="showothers2()" style="text-align: left;">团队
                 </div>
                 </div>
-                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                <div class="col-xs-2 col-sm-2 col-md-4"></div>
 
             </div>
             <!-- <template onchange="show()">
@@ -45,12 +45,13 @@
 
 
             <div class="form-group row">
-                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                <div class="col-xs-2 col-sm-2 col-md-4"></div>
                 <div id="choose">
-                    <div class="col-xs-10 col-sm-8 col-md-4">
-                    <p>请选择团队总人数</p>
+                    <div class="col-xs-8 col-sm-8 col-md-4">
+                    <p class="renshu">请选择团队总人数</p>
 
                     <select class="form-control renshu" name="renshu" id="renshu" onchange="indivi()">
+
                         <option value ="0">请选择</option>
                         <option value ="2">2</option>
                         <option value ="3">3</option>
@@ -61,15 +62,15 @@
                 </div>
   					<!-- <span>Picked: {{ picked }}</span> -->
 				</div>
-                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                <div class="col-xs-2 col-sm-2 col-md-4"></div>
             </div>
 </br>
 			<!-- <input name="renshu1" value="renshu" placeholder="请输入团队人数" onchange="indivi()" > -->
 
             <div id="main">
                 <div class="individual1 form-group row">
-                    <div class="col-xs-1 col-sm-2 col-md-4"></div>
-                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <div class="col-xs-2 col-sm-2 col-md-4"></div>
+                    <div class="col-xs-8 col-sm-8 col-md-4">
                     <p>成员</p>
                 <p>姓名<input type="text" name="name1" class="form-name form-control" v-model="user.name"></p>
                 <p>学号<input type="text" name="studentID1" class="form-studentID form-control" v-model="user.studentID"></p>
@@ -78,12 +79,12 @@
                 <p>班级<input type="text" name="class1" class="form-class form-control" v-model="user.class"></p>
                 <p>学园<input type="text" name="major1" class="form-major form-control" v-model="user.major"></p>
                 </div>
-                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                <div class="col-xs-2 col-sm-2 col-md-4"></div>
                 </div>
 
                 <div class="individual2 form-group row">
-                    <div class="col-xs-1 col-sm-2 col-md-4"></div>
-                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <div class="col-xs-2 col-sm-2 col-md-4"></div>
+                    <div class="col-xs-8 col-sm-8 col-md-4">
                     <p>成员2</p>
                 <p>姓名<input type="text" name="name2" class="form-name form-control" v-model="user.name"></p>
                 <p>学号<input type="text" name="studentID2" class="form-studentID form-control" v-model="user.studentID"></p>
@@ -92,12 +93,12 @@
                 <p>班级<input type="text" name="class2" class="form-class form-control" v-model="user.class"></p>
                 <p>学园<input type="text" name="major2" class="form-major form-control" v-model="user.major"></p>
                 </div>
-                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                <div class="col-xs-2 col-sm-2 col-md-4"></div>
                 </div>
 
                 <div class="individual3 form-group row">
-                    <div class="col-xs-1 col-sm-2 col-md-4"></div>
-                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <div class="col-xs-2 col-sm-2 col-md-4"></div>
+                    <div class="col-xs-8 col-sm-8 col-md-4">
                     <p>成员3</p>
                 <p>姓名<input type="text" name="name3" class="form-name form-control" v-model="user.name"></p>
                 <p>学号<input type="text" name="studentID3" class="form-studentID form-control" v-model="user.studentID"></p>
@@ -106,12 +107,12 @@
                 <p>班级<input type="text" name="class3" class="form-class form-control" v-model="user.class"></p>
                 <p>学园<input type="text" name="major3" class="form-major form-control" v-model="user.major"></p>
                 </div>
-                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                <div class="col-xs-2 col-sm-2 col-md-4"></div>
                 </div>
 
                 <div class="individual4 form-group row">
-                    <div class="col-xs-1 col-sm-2 col-md-4"></div>
-                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <div class="col-xs-2 col-sm-2 col-md-4"></div>
+                    <div class="col-xs-8 col-sm-8 col-md-4">
                     <p>成员4</p>
                 <p>姓名<input type="text" name="name4" class="form-name form-control" v-model="user.name"></p>
                 <p>学号<input type="text" name="studentID4" class="form-studentID form-control" v-model="user.studentID"></p>
@@ -120,12 +121,12 @@
                 <p>班级<input type="text" name="class4" class="form-class form-control" v-model="user.class"></p>
                 <p>学园<input type="text" name="major4" class="form-major form-control" v-model="user.major"></p>
                 </div>
-                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                <div class="col-xs-2 col-sm-2 col-md-4"></div>
                 </div>
 
                 <div class="individual5 form-group row">
-                    <div class="col-xs-1 col-sm-2 col-md-4"></div>
-                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <div class="col-xs-2 col-sm-2 col-md-4"></div>
+                    <div class="col-xs-8 col-sm-8 col-md-4">
                     <p>成员5</p>
                 <p>姓名<input type="text" name="name5" class="form-name form-control" v-model="user.name"></p>
                 <p>学号<input type="text" name="studentID5" class="form-studentID form-control" v-model="user.studentID"></p>
@@ -134,12 +135,12 @@
                 <p>班级<input type="text" name="class5" class="form-class form-control" v-model="user.class"></p>
                 <p>学园<input type="text" name="major5" class="form-major form-control" v-model="user.major"></p>
                 </div>
-                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                <div class="col-xs-2 col-sm-2 col-md-4"></div>
                 </div>
 
                 <div class="individual6 form-group row">
-                    <div class="col-xs-1 col-sm-2 col-md-4"></div>
-                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <div class="col-xs-2 col-sm-2 col-md-4"></div>
+                    <div class="col-xs-8 col-sm-8 col-md-4">
                     <p>成员6</p>
                 <p>姓名<input type="text" name="name6" class="form-name form-control" v-model="user.name"></p>
                 <p>学号<input type="text" name="studentID6" class="form-studentID form-control" v-model="user.studentID"></p>
@@ -148,19 +149,19 @@
                 <p>班级<input type="text" name="class6" class="form-class form-control" v-model="user.class"></p>
                 <p>学园<input type="text" name="major6" class="form-major form-control" v-model="user.major"></p>
                 </div>
-                <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                <div class="col-xs-2 col-sm-2 col-md-4"></div>
                 </div>
 
-                        <div class="col-xs-1 col-sm-2 col-md-4"></div>
-                       <div class="col-xs-10 col-sm-8 col-md-4">
+                        <div class="col-xs-2 col-sm-2 col-md-4"></div>
+                       <div class="col-xs-8 col-sm-8 col-md-4">
                         <div class="timu" name="timu">
                             <p>请简要谈谈你/你们对本次活动的理解以及参加本次活动的原因</p>
                             <textarea class="form-control" rows="5" cols="30" v-model="user.words"></textarea>
                         </div>
                     </br>
-                         <button type="submit" class="btn btn-default">提交</button>
+                         <input type="submit" class="btn btn-default" value="提交">
                         </div>
-                        <div class="col-xs-1 col-sm-2 col-md-4"></div>
+                        <div class="col-xs-2 col-sm-2 col-md-4"></div>
 
 
                         <!-- <div class="col-xs-1 col-sm-2 col-md-4"></div>
